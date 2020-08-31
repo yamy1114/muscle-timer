@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es2017",
+    "module": "es2015",
+    "allowSyntheticDefaultImports": true
+  },
+  "typeRoots": [
+    "node_modules/@types",
+    "types"
+  ]
+}

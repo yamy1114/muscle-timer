@@ -1,0 +1,23 @@
+body {
+  background-color: steelblue;
+}
+
+.object {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.display-time {
+  color: white;
+  font-size: 20vw;
+  font-weight: bold;
+  left: 50vw;
+  top: 38vh;
+}
+
+.button-play {
+  color: white;
+  font-size: 30vw;
+  left: 50vw;
+  top: 62vh;
+}
