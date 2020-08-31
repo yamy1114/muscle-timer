@@ -10,14 +10,15 @@ body {
 .display-time {
   color: white;
   font-size: 20vw;
+  font-family: sans-serif;
   font-weight: bold;
   left: 50vw;
-  top: 38vh;
+  top: 30vh;
 }
 
 .button-play {
   color: white;
   font-size: 30vw;
   left: 50vw;
-  top: 62vh;
+  top: 55vh;
 }
