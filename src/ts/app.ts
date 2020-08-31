@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
   display.append(playButton)
 
   // 定数の設定
-  const startTime: number = 60 * 3 + 30
+  const startTime: number = 60 * 3 + 30 + 10
   const longWhistleHowl = new Howl({ src: [LongWhistle] })
   const shortWhistleHowl = new Howl({ src: [ShortWhistle] })
   const playSoundHowl = new Howl({ src: [PlaySound] })
