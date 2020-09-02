@@ -108,9 +108,10 @@ window.addEventListener('load', () => {
       time -= 1
       redrawTime(time)
 
-      if (time % 30 >= 1 && time % 30 <= 5) {
+      const interval_time = time % 30
+      if (interval_time >= 1 && interval_time <= 5 || interval_time >= 11 && interval_time <= 15) {
         shortWhistleHowl.play()
-      } else if (time % 30 == 0) {
+      } else if (interval_time == 0 || interval_time == 10) {
         longWhistleHowl.play()
       }
     }
