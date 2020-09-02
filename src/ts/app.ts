@@ -13,9 +13,7 @@ window.addEventListener('load', () => {
   document.addEventListener(
     'touchmove',
     (event) => {
-      if (event.touches.length >= 2) {
-        event.preventDefault()
-      }
+      event.preventDefault()
     },
     {
       passive: false
