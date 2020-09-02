@@ -3,6 +3,10 @@
   src: url('./font/number.ttf')
 }
 
+html {
+  touch-action: manipulation;
+}
+
 body {
   background-color: steelblue;
   font-family: 'number';

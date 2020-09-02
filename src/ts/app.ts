@@ -9,6 +9,19 @@ import ShortWhistle from '../music/whistle_short.mp3'
 import PlaySound from '../music/play.mp3'
 
 window.addEventListener('load', () => {
+  // スクロール抑制
+  document.addEventListener(
+    'touchmove',
+    (event) => {
+      if (event.touches.length >= 2) {
+        event.preventDefault()
+      }
+    },
+    {
+      passive: false
+    }
+  )
+
   // HTML 要素の描画
   const display: HTMLElement = document.getElementById('display')
 
