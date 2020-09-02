@@ -31,7 +31,7 @@ body {
   top: 50%;
 
   opacity: 0.5;
-  filter: grayscale(1);
+  filter: grayscale(1) brightness(0.7);
 }
 
 .display-time {
@@ -47,6 +47,15 @@ body {
   font-size: 30vw;
   left: 50vw;
   top: 55vh;
+  z-index: 10;
+}
+
+.button-reset {
+  color: white;
+  font-size: 15vw;
+  font-weight: bold;
+  left: 10vw;
+  bottom: 10vw;
   z-index: 10;
 }
 

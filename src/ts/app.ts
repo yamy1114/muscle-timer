@@ -33,9 +33,14 @@ window.addEventListener('load', () => {
   const playButton: HTMLElement = document.createElement('i')
   playButton.classList.add('material-icons', 'button-play', 'object')
 
+  const resetButton: HTMLElement = document.createElement('i')
+  resetButton.classList.add('material-icons', 'button-reset', 'object')
+  resetButton.textContent = 'replay'
+
   display.append(bg)
   display.append(displayTime)
   display.append(playButton)
+  display.append(resetButton)
 
   // 定数の設定
   const startTime: number = 60 * 3 + 30 + 10
@@ -63,11 +68,18 @@ window.addEventListener('load', () => {
     if (active || active == null) {
       active = false
       playButton.textContent = 'play_circle_outline'
-      console.log(playButton)
     } else {
       active = true
       playButton.textContent = 'pause_circle_filled'
     }
+  }
+
+  const reset = () => {
+    active = false
+    time = startTime
+    redrawTime(time)
+    playSoundHowl.play()
+    playButton.textContent = 'play_circle_outline'
   }
 
   function formatTime(time: number) {
@@ -89,6 +101,7 @@ window.addEventListener('load', () => {
   redrawTime(time)
   togglePlay()
   playButton.onclick = togglePlay
+  resetButton.onclick = reset
 
   setInterval(() => {
     if (time > 0 && active) {
