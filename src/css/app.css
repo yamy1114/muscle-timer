@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'number';
+  src: url('./font/number.ttf')
+}
+
 body {
   background-color: steelblue;
+  font-family: 'number';
 }
 
 .object {
@@ -7,10 +13,26 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.display {
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  left: 50%;
+  top: 50%;
+
+  opacity: 0.5;
+  filter: grayscale(1) brightness(0.5);
+}
+
 .display-time {
   color: white;
   font-size: 20vw;
-  font-family: ui-sans-serif;
   font-weight: bold;
   left: 50vw;
   top: 30vh;
@@ -21,4 +43,21 @@ body {
   font-size: 30vw;
   left: 50vw;
   top: 55vh;
+  z-index: 10;
+}
+
+.button-effect {
+  background-color: white;
+  border-radius: 50%;
+  left: 50vw;
+  top: 55vh;
+  width: 30vw;
+  height: 30vw;
+  z-index: 1;
+  animation: ripple 0.5s forwards ease-out
+}
+
+@keyframes ripple {
+  0%:  { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
 }

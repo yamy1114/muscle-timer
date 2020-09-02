@@ -1,4 +1,8 @@
 import '../css/app.css'
+import '../font/number.ttf'
+
+import BgImg from '../img/bg.png'
+
 import { Howl } from 'howler'
 import LongWhistle from '../music/whistle_long.mp3'
 import ShortWhistle from '../music/whistle_short.mp3'
@@ -8,12 +12,17 @@ window.addEventListener('load', () => {
   // HTML 要素の描画
   const display: HTMLElement = document.getElementById('display')
 
+  const bg: HTMLImageElement = document.createElement('img')
+  bg.classList.add('bg', 'object')
+  bg.src = BgImg
+
   const displayTime: HTMLElement = document.createElement('div')
   displayTime.classList.add('display-time', 'object')
 
   const playButton: HTMLElement = document.createElement('i')
   playButton.classList.add('material-icons', 'button-play', 'object')
 
+  display.append(bg)
   display.append(displayTime)
   display.append(playButton)
 
@@ -24,9 +33,20 @@ window.addEventListener('load', () => {
   const playSoundHowl = new Howl({ src: [PlaySound] })
 
   // 関数定義
+  const createRipple = () => {
+    const ripple = document.createElement('div')
+    ripple.classList.add('button-effect', 'object')
+    ripple.addEventListener('animationend', (event) => {
+      const target = event.srcElement as HTMLElement
+      target.remove()
+    })
+    display.append(ripple)
+  }
+
   const togglePlay = () => {
     if (active != null) {
       playSoundHowl.play()
+      createRipple()
     }
 
     if (active || active == null) {
